@@ -1,4 +1,4 @@
-// Реализуйте и экспортируйте функцию по умолчанию, которая принимает на вход цепь ДНК
+// Реализуйте функцию, которая принимает на вход цепь ДНК
 // и возвращает соответствующую цепь РНК (совершает транскрипцию РНК).
 // G -> C
 // C -> G
@@ -15,7 +15,7 @@ const dnaToRna = (dna) => {
     A: 'U',
   };
   dna.split('').forEach((nucleotide) => {
-    if (!nucleotideDNA[nucleotide]) {
+    if (!Object.hasOwn(nucleotideDNA, nucleotide)) {
       rna = null;
     } else if (rna !== null) {
       rna += nucleotideDNA[nucleotide];
